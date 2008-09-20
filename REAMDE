@@ -1,0 +1,1 @@
+This script fetches the metabolic reaction data form KEGG database, and parses it to generate bi-partite metabolic network data. 
