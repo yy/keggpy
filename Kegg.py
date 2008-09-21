@@ -80,13 +80,13 @@ class MetabolicNetwork:
         for e_entry, e in self.enzymeDict.iteritems():
             for c_entry in e.compounds:
                 self.addLink(e_entry, c_entry)
-                #valide compound c
+                #valide compound c 
                 validCompoundFlag[c_entry] = True
 
         # if the compound doesn't have any connection to the enzymes of Homo sapiens, 
         # prune the compound.    
         for c_entry,c in self.compoundDict.iteritems():
-            validCompoundFlag[c_entry] = validCompoundFlag[c_entry] if validCompoundFlag.has_key(c_entry) else False
+            validCompoundFlag[c_entry] = True if validCompoundFlag.has_key(c_entry) else False
             for e_entry in c.enzymes:
                 if self.enzymeDict.has_key(e_entry):
                     self.addLink(e_entry, c_entry)
